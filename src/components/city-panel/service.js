@@ -11,7 +11,8 @@ export default class CityPanelService {
   }
 
   cities(placeId) {
-    const url = URL_API + URL_CITIES + placeId;
+    // const url = URL_API + URL_CITIES + placeId;
+    const url = 'json-mocks/ChIJ0RhONcBEFkcRv4pHdrW2a7Q.json';
     return fetch(url);
   }
 

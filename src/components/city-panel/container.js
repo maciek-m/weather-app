@@ -20,10 +20,7 @@ class CityPanelContainer extends Component {
   }
 
   componentDidMount() {
-    const cityPlaceId = this.getLastCityId();
-    // this.props.getCity(cityPlaceId);
-    const { dispatch } = this.props;
-    dispatch(getCity(cityPlaceId));
+    this.refreshCity(this.getLastCityId());
   }
 
   getLastCityId() {
@@ -31,8 +28,13 @@ class CityPanelContainer extends Component {
     // todo: read from WebStorage first!
   }
 
+  refreshCity(cityPlaceId) {
+    const { dispatch } = this.props;
+    dispatch(getCity(cityPlaceId));
+  }
+
   render() {
-    return <CityPanel cityName="KRK"/>;
+    return <CityPanel cityName="" onRefresh={(e) => this.refreshCity(this.getLastCityId())}/>;
   }
 
 }
