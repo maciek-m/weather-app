@@ -1,10 +1,12 @@
 import _ from 'lodash';
 // import { bindActionCreators } from 'redux';
 // import * as actionCreators from './action';
+const CITY_REDUCER = 'cityReducer';
 
 export function mapStateToProps(state) {
-  const props = _.pick(state, 'result', ['address_components', 'geometry']);
-  console.log(props);
+  // console.log('mapStateToProps 1', state);
+  const props = state[CITY_REDUCER];
+  // console.log('mapStateToProps 2', props);
   return props;
 }
 

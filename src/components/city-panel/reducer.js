@@ -3,8 +3,8 @@
 // import Immutable from 'immutable';
 import _ from 'lodash';
 import {createReducer} from 'redux-act';
-import {cityRequest, cityResponded} from './action';
-
+// import { cityAction } from './actions';
+import { cityRequest, cityOk, cityErr } from './actions';
 
 // const defaultState = Immutable.Map({ // eslint-disable-line new-cap
 //   isLoading: false,
@@ -12,14 +12,22 @@ import {cityRequest, cityResponded} from './action';
 // });
 
 const defaultState = {
-  isLoading: false,
-  response: {}
+  loading: false,
+  data: null
 };
 
-function transform(response) {
+function transformCityData(response) {
   const value = _.pick(response, ['result', 'status']);
-  console.log('city response: ', response);
-  return value;
+  // console.log('city response: ', response);
+  // console.log('');
+  return Object.assign({}, {
+    status: value.status,
+    name: value.result.name,
+    formattedAddress: value.result.formatted_address,
+    placeId: value.result.place_id,
+    country: value.result.formatted_address.split(',').slice(-1)[0],
+    date: new Date()
+  });
 }
 
 // const reducer = createReducer({
@@ -28,12 +36,30 @@ function transform(response) {
 //     .set('city', transform(response))
 // }, defaultState);
 
+// const reducer = createReducer({
+//   [cityRequest]: (state) => ({...state, isLoading: true}),
+//   [cityResponded]: (state, response) => ({
+//     ...state,
+//     isLoading: false,
+//     response: transform(response)
+//   })
+// }, defaultState);
+
 const reducer = createReducer({
-  [cityRequest]: (state) => ({...state, isLoading: true}),
-  [cityResponded]: (state, response) => ({
+  [cityRequest]: (state, payload) => ({
     ...state,
-    isLoading: false,
-    response: transform(response)
+    loading: true,
+    error: null
+  }),
+  [cityOk]: (state, payload) => ({
+    ...state,
+    loading: false,
+    data: transformCityData(payload)
+  }),
+  [cityErr]: (state, error) => ({
+    ...state,
+    loading: false,
+    error
   })
 }, defaultState);
 

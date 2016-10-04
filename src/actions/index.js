@@ -5,6 +5,6 @@ Allows to import actions like so:
 import {action1, action2} from '../actions/'
 */
 /* Populated by react-webpack-redux:action */
-import getCurrentCity from '../components/city-panel/action.js';
+import getCurrentCity from '../components/city-panel/actions.js';
 const actions = { getCurrentCity };
 module.exports = actions;

@@ -2,9 +2,9 @@ import React, {
   Component,
   PropTypes
 } from 'react';
-import { connect } from 'react-redux';
-import { mapStateToProps, mapDispatchToProps } from './selector';
-import { getCity } from './action';
+import {connect} from 'react-redux';
+import {mapStateToProps, mapDispatchToProps} from './selector';
+import {getCity} from './actions';
 import CityPanel from './citypanel';
 
 const DEFAULT_CITY_ID = 'ChIJ0RhONcBEFkcRv4pHdrW2a7Q';
@@ -15,7 +15,9 @@ class CityPanelContainer extends Component {
     return {
       // getCity: PropTypes.func.isRequired
       // city: PropTypes.object.isRequired
-      dispatch: PropTypes.func.isRequired
+      dispatch: PropTypes.func.isRequired,
+      loading: PropTypes.bool,
+      data: PropTypes.object.isRequired
     };
   }
 
@@ -29,12 +31,22 @@ class CityPanelContainer extends Component {
   }
 
   refreshCity(cityPlaceId) {
-    const { dispatch } = this.props;
+    const {dispatch} = this.props;
     dispatch(getCity(cityPlaceId));
+    // dispatch(cityAction(cityPlaceId));
   }
 
   render() {
-    return <CityPanel cityName="" onRefresh={(e) => this.refreshCity(this.getLastCityId())}/>;
+    const {loading, data} = this.props;
+
+    return ((data) ?
+      <CityPanel
+        cityName={data.name}
+        country={data.country}
+        date={data.date}
+        onRefresh={() => this.refreshCity(data.placeId)}
+      />
+      : <h3>Loading data...</h3>);
   }
 
 }
