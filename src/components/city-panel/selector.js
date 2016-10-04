@@ -1,4 +1,4 @@
-import _ from 'lodash';
+// import _ from 'lodash';
 // import { bindActionCreators } from 'redux';
 // import * as actionCreators from './action';
 export const CITY_REDUCER = 'cityReducer';

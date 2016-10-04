@@ -1,5 +1,4 @@
 import React, {
-  Component,
   PropTypes
 } from 'react';
 import { bindActionCreators } from 'redux';
@@ -10,7 +9,7 @@ import {CITY_REDUCER} from '../components/city-panel/selector';
 
 const DEFAULT_CITY_ID = 'ChIJ0RhONcBEFkcRv4pHdrW2a7Q';
 
-class App extends Component {
+class App extends React.Component {
 
   static get propTypes() {
     return {

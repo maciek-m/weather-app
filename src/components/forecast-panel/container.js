@@ -1,5 +1,4 @@
 import React, {
-  Component,
   PropTypes
 } from 'react';
 import {connect} from 'react-redux';
@@ -10,19 +9,45 @@ import Forecast from './forecast';
 
 class ForecastContainer extends React.Component {
 
-  render() {
+  static get propTypes() {
+    return {
+      loading: PropTypes.bool,
+      data: PropTypes.object,
+      error: PropTypes.object
+    };
+  }
+
+  renderData(data) {
+    const {...props} = data.currently;
     return (
       <Container>
         <Row>
           <Col>
-            <CurrentWeather />
+            <CurrentWeather {...props}/>
           </Col>
           <Col>
-            <Forecast />
+            <Forecast forecasts={data.futureForecasts}/>
           </Col>
         </Row>
       </Container>
     );
+  }
+
+  renderError(error) {
+    return (<div className="container">{error.message}</div>);
+  }
+
+  renderForecast(data, error) {
+    return (error ? this.renderError(error) : this.renderData(data));
+  }
+
+  render() {
+    const {loading, data, error} = this.props;
+    return ((loading || ((!data) && !(error))) ?
+      <h4>Loading data...</h4>
+      : this.renderForecast(data, error)
+    );
+
   }
 
 }
