@@ -10,14 +10,26 @@ import CityPanel from '../components/city-panel';
 
 // const yeomanImage = require('../images/yeoman.png');
 
+const DEFAULT_SOURCE = 'WORLD_WEATHER';
+
 class AppComponent extends React.Component {
+
+  static get displayName() {
+    return 'AppComponent';
+  }
+
+  cityChanged(latitude, longitude) {
+    console.log('city changed ', latitude, longitude);
+    // todo: call action for forecast
+  }
 
   render() {
     return (
       <Container>
         <Row>
           <Col>
-            <CityPanel/>
+            <CityPanel
+              onCityChange={(latitude, longitude) => this.cityChanged(latitude, longitude)}/>
           </Col>
         </Row>
       </Container>

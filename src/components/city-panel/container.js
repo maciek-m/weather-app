@@ -18,12 +18,23 @@ class CityPanelContainer extends Component {
       dispatch: PropTypes.func.isRequired,
       loading: PropTypes.bool,
       data: PropTypes.object,
-      error: PropTypes.object
+      error: PropTypes.object,
+      onCityChange: PropTypes.func.isRequired
     };
   }
 
   componentDidMount() {
     this.refreshCity(this.getLastCityId());
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.data) {
+      if ((!prevProps.data) || (this.props.data.placeId !== prevProps.data.placeId)) {
+        // todo: save to webstorage
+        this.props.onCityChange(this.props.data.geometry.location.lat,
+          this.props.data.geometry.location.lng);
+      }
+    }
   }
 
   getLastCityId() {

@@ -13,7 +13,8 @@ import { cityRequest, cityOk, cityErr } from './actions';
 
 const defaultState = {
   loading: false,
-  data: null
+  data: null,
+  error: null
 };
 
 function transformCityData(response) {
@@ -26,7 +27,8 @@ function transformCityData(response) {
     formattedAddress: value.result.formatted_address,
     placeId: value.result.place_id,
     country: value.result.formatted_address.split(',').slice(-1)[0],
-    date: new Date()
+    date: new Date(),
+    geometry: value.result.geometry
   });
 }
 
@@ -59,6 +61,7 @@ const reducer = createReducer({
   [cityErr]: (state, payload) => ({
     ...state,
     loading: false,
+    data: null,
     error: payload
   })
 }, defaultState);
