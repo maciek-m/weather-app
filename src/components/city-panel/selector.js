@@ -1,7 +1,7 @@
 import _ from 'lodash';
 // import { bindActionCreators } from 'redux';
 // import * as actionCreators from './action';
-const CITY_REDUCER = 'cityReducer';
+export const CITY_REDUCER = 'cityReducer';
 
 export function mapStateToProps(state) {
   // console.log('mapStateToProps 1', state);

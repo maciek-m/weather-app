@@ -1,0 +1,72 @@
+{
+  "currently": {
+    "temperature": 52.0,
+    "apparentTemperature": 46.0,
+    "date": "2016-10-04",
+    "humidity": 0.87,
+    "pressure": 1018.0,
+    "cloudCover": 0.0
+  },
+  "futureForecasts": [
+    {
+      "temperatureMin": 41.0,
+      "temperatureMax": 45.0,
+      "apparentTemperatureMin": 37.0,
+      "apparentTemperatureMax": 37.0,
+      "date": "2016-10-05",
+      "humidity": 0.83,
+      "pressure": 1019.0,
+      "cloudCover": 1.0
+    },
+    {
+      "temperatureMin": 36.0,
+      "temperatureMax": 48.0,
+      "apparentTemperatureMin": 44.0,
+      "apparentTemperatureMax": 44.0,
+      "date": "2016-10-06",
+      "humidity": 0.91,
+      "pressure": 1012.0,
+      "cloudCover": 0.97
+    },
+    {
+      "temperatureMin": 38.0,
+      "temperatureMax": 50.0,
+      "apparentTemperatureMin": 47.0,
+      "apparentTemperatureMax": 47.0,
+      "date": "2016-10-07",
+      "humidity": 0.85,
+      "pressure": 1016.0,
+      "cloudCover": 1.0
+    },
+    {
+      "temperatureMin": 34.0,
+      "temperatureMax": 49.0,
+      "apparentTemperatureMin": 44.0,
+      "apparentTemperatureMax": 44.0,
+      "date": "2016-10-08",
+      "humidity": 0.83,
+      "pressure": 1017.0,
+      "cloudCover": 0.58
+    },
+    {
+      "temperatureMin": 37.0,
+      "temperatureMax": 51.0,
+      "apparentTemperatureMin": 47.0,
+      "apparentTemperatureMax": 47.0,
+      "date": "2016-10-09",
+      "humidity": 0.81,
+      "pressure": 1017.0,
+      "cloudCover": 0.48
+    },
+    {
+      "temperatureMin": 37.0,
+      "temperatureMax": 52.0,
+      "apparentTemperatureMin": 43.0,
+      "apparentTemperatureMax": 43.0,
+      "date": "2016-10-10",
+      "humidity": 0.78,
+      "pressure": 1020.0,
+      "cloudCover": 0.96
+    }
+  ]
+}

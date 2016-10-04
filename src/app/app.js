@@ -1,16 +1,8 @@
 import React from 'react';
-// import 'jquery';
-// window.jQuery = window.$ = require('jquery/dist/jquery.min');
-// import 'bootstrap';
-// import './app.css';
 import 'bootstrap/scss/bootstrap.scss';
 import { Container, Row, Col } from 'reactstrap';
 import CityPanel from '../components/city-panel';
-
-
-// const yeomanImage = require('../images/yeoman.png');
-
-const DEFAULT_SOURCE = 'WORLD_WEATHER';
+import ForecastPanel from '../components/forecast-panel';
 
 class AppComponent extends React.Component {
 
@@ -18,18 +10,24 @@ class AppComponent extends React.Component {
     return 'AppComponent';
   }
 
-  cityChanged(latitude, longitude) {
-    console.log('city changed ', latitude, longitude);
-    // todo: call action for forecast
+  static get propTypes() {
+    return {
+      lastCityPlaceId: React.PropTypes.string,
+    };
   }
 
   render() {
+    const { lastCityPlaceId } = this.props;
     return (
       <Container>
         <Row>
           <Col>
-            <CityPanel
-              onCityChange={(latitude, longitude) => this.cityChanged(latitude, longitude)}/>
+            <CityPanel lastCityPlaceId={lastCityPlaceId} />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <ForecastPanel/>
           </Col>
         </Row>
       </Container>
@@ -37,8 +35,5 @@ class AppComponent extends React.Component {
   }
 
 }
-
-// AppComponent.defaultProps = {
-// };
 
 export default AppComponent;

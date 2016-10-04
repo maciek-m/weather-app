@@ -3,19 +3,14 @@
 // import Immutable from 'immutable';
 import _ from 'lodash';
 import {createReducer} from 'redux-act';
+import {defaultState} from '../common/reducer';
 // import { cityAction } from './actions';
-import { cityRequest, cityOk, cityErr } from './actions';
+import {cityRequest, cityOk, cityErr} from './actions';
 
 // const defaultState = Immutable.Map({ // eslint-disable-line new-cap
 //   isLoading: false,
 //   city: {}
 // });
-
-const defaultState = {
-  loading: false,
-  data: null,
-  error: null
-};
 
 function transformCityData(response) {
   const value = _.pick(response, ['result', 'status']);

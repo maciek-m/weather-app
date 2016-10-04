@@ -1,11 +1,12 @@
-const URL_API = 'http://chathamweatherapi.azurewebsites.net/api/';
+import { URL_API } from '../common/service';
+
 const URL_CITIES = 'cities/';
 
-export default class CityPanelService {
+export default class CityService {
 
   static getInstance() {
     if (!this.instance) {
-      this.instance = new CityPanelService();
+      this.instance = new CityService();
     }
     return this.instance;
   }
@@ -15,6 +16,5 @@ export default class CityPanelService {
     const url = 'json-mocks/ChIJ0RhONcBEFkcRv4pHdrW2a7Q.json';
     return fetch(url);
   }
-
 
 }

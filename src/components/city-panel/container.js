@@ -3,43 +3,27 @@ import React, {
   PropTypes
 } from 'react';
 import {connect} from 'react-redux';
-import {mapStateToProps, mapDispatchToProps} from './selector';
+import {mapStateToProps} from './selector';
 import {getCity} from './actions';
 import CityPanel from './citypanel';
-
-const DEFAULT_CITY_ID = 'ChIJ0RhONcBEFkcRv4pHdrW2a7Q';
 
 class CityPanelContainer extends Component {
 
   static get propTypes() {
     return {
       // getCity: PropTypes.func.isRequired
-      // city: PropTypes.object.isRequired
+      // city: PropTypes.object.isRequiredCityPanelContainer
+      lastCityPlaceId: PropTypes.string,
       dispatch: PropTypes.func.isRequired,
       loading: PropTypes.bool,
       data: PropTypes.object,
-      error: PropTypes.object,
-      onCityChange: PropTypes.func.isRequired
+      error: PropTypes.object
+      // onCityChange: PropTypes.func.isRequired
     };
   }
 
   componentDidMount() {
-    this.refreshCity(this.getLastCityId());
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (this.props.data) {
-      if ((!prevProps.data) || (this.props.data.placeId !== prevProps.data.placeId)) {
-        // todo: save to webstorage
-        this.props.onCityChange(this.props.data.geometry.location.lat,
-          this.props.data.geometry.location.lng);
-      }
-    }
-  }
-
-  getLastCityId() {
-    return DEFAULT_CITY_ID;
-    // todo: read from WebStorage first!
+    this.refreshCity(this.props.lastCityPlaceId);
   }
 
   refreshCity(cityPlaceId) {
