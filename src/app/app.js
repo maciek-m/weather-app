@@ -1,8 +1,8 @@
 import React from 'react';
 import 'bootstrap/scss/bootstrap.scss';
 import { Container, Row, Col } from 'reactstrap';
-import CityPanel from '../components/city-panel';
-import ForecastPanel from '../components/forecast-panel';
+import CityPanel from '../components/city';
+import ForecastPanel from '../components/forecast';
 
 class AppComponent extends React.Component {
 

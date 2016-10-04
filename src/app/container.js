@@ -4,8 +4,8 @@ import React, {
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import AppComponent from './app';
-import {getForecast} from '../components/forecast-panel/actions';
-import {CITY_REDUCER} from '../components/city-panel/selector';
+import {getForecast} from '../components/forecast/actions';
+import {CITY_REDUCER} from '../components/city/selector';
 
 const DEFAULT_CITY_ID = 'ChIJ0RhONcBEFkcRv4pHdrW2a7Q';
 
@@ -38,16 +38,12 @@ class App extends React.Component {
         // todo: save to webstorage
         this.cityChanged(this.props.data.geometry.location.lat,
           this.props.data.geometry.location.lng);
-        // this.props.onCityChange(this.props.data.geometry.location.lat,
-        //   this.props.data.geometry.location.lng);
       }
     }
   }
 
   cityChanged(latitude, longitude) {
     console.log('city changed ', latitude, longitude);
-    // todo: call action for forecast
-    // this.props.dispatch(getForecast(latitude, longitude));
     const {dispatch} = this.props;
     dispatch(getForecast(latitude, longitude));
   }

@@ -15,7 +15,7 @@ export default class Forecast extends React.Component {
   renderDay(dayForecast) {
     const {...props} = dayForecast;
     return (
-      <ForecastDay {...props} />
+      <ForecastDay key={dayForecast.date} {...props} />
     );
   }
 
