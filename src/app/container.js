@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import AppComponent from './app';
 import {getForecast} from '../components/forecast/actions';
 import {CITY_REDUCER} from '../components/city/selector';
+import {getCity} from '../components/city/actions';
 
 const DEFAULT_CITY_ID = 'ChIJ0RhONcBEFkcRv4pHdrW2a7Q';
 
@@ -48,8 +49,16 @@ class App extends React.Component {
     dispatch(getForecast(latitude, longitude));
   }
 
+  refresh() {
+    const {dispatch, data} = this.props;
+    dispatch(getCity(data.placeId));
+  }
+
   render() {
-    return <AppComponent lastCityPlaceId={this.state.lastCityPlaceId}/>;
+    return (<AppComponent
+      lastCityPlaceId={this.state.lastCityPlaceId}
+      onRefresh={() => this.refresh()}
+    />);
   }
 }
 

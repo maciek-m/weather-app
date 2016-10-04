@@ -11,14 +11,11 @@ class CityPanelContainer extends Component {
 
   static get propTypes() {
     return {
-      // getCity: PropTypes.func.isRequired
-      // city: PropTypes.object.isRequiredCityPanelContainer
       lastCityPlaceId: PropTypes.string,
       dispatch: PropTypes.func.isRequired,
       loading: PropTypes.bool,
       data: PropTypes.object,
       error: PropTypes.object
-      // onCityChange: PropTypes.func.isRequired
     };
   }
 
@@ -29,7 +26,6 @@ class CityPanelContainer extends Component {
   refreshCity(cityPlaceId) {
     const {dispatch} = this.props;
     dispatch(getCity(cityPlaceId));
-    // dispatch(cityAction(cityPlaceId));
   }
 
   renderCity() {
@@ -40,7 +36,6 @@ class CityPanelContainer extends Component {
         cityName={data.name}
         country={data.country}
         date={data.date}
-        onRefresh={() => this.refreshCity(data.placeId)}
       />
       : <div className="container">Error: {error.message}</div>
     );
@@ -56,17 +51,5 @@ class CityPanelContainer extends Component {
   }
 
 }
-
-// function mapStateToProps(state) {
-//   const props = _.pick(state, 'result', ['address_components', 'geometry']);
-//   console.log(props);
-//   return props;
-// }
-//
-// function mapDispatchToProps(dispatch) {
-//   // const actions = { getCity };
-//   const actionMap = { actions: bindActionCreators(actionCreators, dispatch) };
-//   return actionMap;
-// }
 
 export default connect(mapStateToProps)(CityPanelContainer);

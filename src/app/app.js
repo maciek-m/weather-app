@@ -1,8 +1,9 @@
 import React from 'react';
 import 'bootstrap/scss/bootstrap.scss';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 import CityPanel from '../components/city';
 import ForecastPanel from '../components/forecast';
+import ChangeLocation from '../components/change-location';
 
 class AppComponent extends React.Component {
 
@@ -13,20 +14,27 @@ class AppComponent extends React.Component {
   static get propTypes() {
     return {
       lastCityPlaceId: React.PropTypes.string,
+      onRefresh: React.PropTypes.func.isRequired
     };
   }
 
   render() {
-    const { lastCityPlaceId } = this.props;
+    const { lastCityPlaceId, onRefresh } = this.props;
     return (
       <Container>
         <Row>
-          <Col>
+          <Col sm="6">
             <CityPanel lastCityPlaceId={lastCityPlaceId} />
+          </Col>
+          <Col sm="4">
+            <ChangeLocation/>
+          </Col>
+          <Col sm="2">
+            <Button color="primary" onClick={onRefresh}>Refresh</Button>
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col md="12">
             <ForecastPanel/>
           </Col>
         </Row>
