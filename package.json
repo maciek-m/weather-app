@@ -11,8 +11,9 @@
     "lint": "eslint ./src",
     "posttest": "npm run lint",
     "serve:dev": "webpack-dev-server --open --env dev",
-    "serve:dist": "webpack-dev-server --open --env dist -p --progress",
+    "serve:dist": "http-server ./dist -a 0.0.0.0 --port 7999",
     "start": "npm run serve:dev",
+    "demo": "npm run dist && npm run serve:dist",
     "test": "karma start",
     "test:watch": "karma start --autoWatch=true --singleRun=false --reporters=progress"
   },
@@ -41,6 +42,7 @@
     "eslint-plugin-jsx-a11y": "^1.0.0",
     "eslint-plugin-react": "^5.0.0",
     "file-loader": "^0.9.0",
+    "http-server": "^0.9.0",
     "isparta-loader": "^2.0.0",
     "jasmine": "^2.5.2",
     "jasmine-core": "^2.5.2",
@@ -59,7 +61,7 @@
     "sinon": "^1.17.3",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "2.1.0-beta.6",
+    "webpack": "2.1.0-beta.7",
     "webpack-dev-server": "2.1.0-beta.7"
   },
   "dependencies": {

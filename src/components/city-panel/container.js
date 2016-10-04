@@ -17,7 +17,8 @@ class CityPanelContainer extends Component {
       // city: PropTypes.object.isRequired
       dispatch: PropTypes.func.isRequired,
       loading: PropTypes.bool,
-      data: PropTypes.object.isRequired
+      data: PropTypes.object,
+      error: PropTypes.object
     };
   }
 
@@ -36,8 +37,8 @@ class CityPanelContainer extends Component {
     // dispatch(cityAction(cityPlaceId));
   }
 
-  render() {
-    const {loading, data} = this.props;
+  renderCity() {
+    const {data, error} = this.props;
 
     return ((data) ?
       <CityPanel
@@ -46,7 +47,17 @@ class CityPanelContainer extends Component {
         date={data.date}
         onRefresh={() => this.refreshCity(data.placeId)}
       />
-      : <h3>Loading data...</h3>);
+      : <div className="container">Error: {error.message}</div>
+    );
+  }
+
+  render() {
+    const {loading, data, error} = this.props;
+
+    return ((loading || ((!data) && !(error))) ?
+      <h3>Loading data...</h3>
+      : this.renderCity()
+    );
   }
 
 }

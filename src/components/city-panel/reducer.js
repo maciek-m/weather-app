@@ -56,10 +56,10 @@ const reducer = createReducer({
     loading: false,
     data: transformCityData(payload)
   }),
-  [cityErr]: (state, error) => ({
+  [cityErr]: (state, payload) => ({
     ...state,
     loading: false,
-    error
+    error: payload
   })
 }, defaultState);
 
