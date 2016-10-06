@@ -12,7 +12,7 @@ function transformData(data) {
 }
 
 const reducer = createReducer({
-  [citySearchRequest]: (state, payload) => ({
+  [citySearchRequest]: (state, payload) => ({ // eslint-disable-line no-unused-vars
     ...state,
     loading: true,
     error: null
@@ -28,7 +28,7 @@ const reducer = createReducer({
     data: null,
     error: payload
   }),
-  [citySearchClear]: (state, payload) => ({
+  [citySearchClear]: (state, payload) => ({   // eslint-disable-line no-unused-vars
     ...state,
     loading: false,
     data: null,

@@ -20,7 +20,7 @@ function transformCityData(response) {
 }
 
 const reducer = createReducer({
-  [cityRequest]: (state, payload) => ({
+  [cityRequest]: (state, payload) => ({ // eslint-disable-line no-unused-vars
     ...state,
     loading: true,
     error: null

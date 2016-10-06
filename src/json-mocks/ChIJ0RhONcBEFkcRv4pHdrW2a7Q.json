@@ -1,0 +1,143 @@
+{
+   "html_attributions" : [],
+   "result" : {
+      "address_components" : [
+         {
+            "long_name" : "Kraków",
+            "short_name" : "Kraków",
+            "types" : [ "locality", "political" ]
+         },
+         {
+            "long_name" : "Kraków",
+            "short_name" : "Kraków",
+            "types" : [ "administrative_area_level_3", "political" ]
+         },
+         {
+            "long_name" : "Kraków County",
+            "short_name" : "Kraków County",
+            "types" : [ "administrative_area_level_2", "political" ]
+         },
+         {
+            "long_name" : "Lesser Poland Voivodeship",
+            "short_name" : "Lesser Poland Voivodeship",
+            "types" : [ "administrative_area_level_1", "political" ]
+         },
+         {
+            "long_name" : "Poland",
+            "short_name" : "PL",
+            "types" : [ "country", "political" ]
+         }
+      ],
+      "adr_address" : "\u003cspan class=\"locality\"\u003eKraków\u003c/span\u003e, \u003cspan class=\"country-name\"\u003ePoland\u003c/span\u003e",
+      "formatted_address" : "Kraków, Poland",
+      "geometry" : {
+         "location" : {
+            "lat" : 50.06465009999999,
+            "lng" : 19.9449799
+         },
+         "viewport" : {
+            "northeast" : {
+               "lat" : 50.1261259,
+               "lng" : 20.217475
+            },
+            "southwest" : {
+               "lat" : 49.9674053,
+               "lng" : 19.7922485
+            }
+         }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+      "id" : "22ee34a1db0c617129e62cb84d1eb7162afceb98",
+      "name" : "Kraków",
+      "photos" : [
+         {
+            "height" : 3006,
+            "html_attributions" : [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102345724631769174109/photos\"\u003eAdrian Zborowski\u003c/a\u003e"
+            ],
+            "photo_reference" : "CoQBdwAAABDA3nmf4fb1m_KKa5q2PPOF9b5ECWqU9Byoj5aHAfTpx8SxxiYdLkSM_UTjM9-OpwBbUsBE77TnOClV2Ipc0fvTwFZtYZtFvt4rmrcPZ_jnx1JlIAEqMMLJUjx5ACOXqeMxpm3RD6Gfd1t9qpxpEaHzZSx7kDJytfMOuhWE-hGVEhB4pLl46LBp2I2iESBqKey8GhT3aO0fEpEerSkD6aFEOyXncFlNRg",
+            "width" : 5344
+         },
+         {
+            "height" : 3266,
+            "html_attributions" : [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109104673503451209616/photos\"\u003eVladas Portapas\u003c/a\u003e"
+            ],
+            "photo_reference" : "CoQBdwAAAF8akPSzdORnOXqlTM9Dic3MzaI_-XO744lR-7rs3JsTPhzrGdzOUSlU2DPAVGdEqEhYKg3fJfgwURqjDNk0IaIGjPBWWPKFe8kpsJ2d-4zqlwtq44fC9YemBI0iJp8WCfraw8EGC2ou7q0CZqpNa9cfdUSoEZ1NAFanfXsyMZCTEhCCd7t3dwfSGNJkKSHdBQnYGhSRs_UIh_TuU7R9knqFaV8cD8DPkQ",
+            "width" : 4898
+         },
+         {
+            "height" : 3266,
+            "html_attributions" : [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109104673503451209616/photos\"\u003eVladas Portapas\u003c/a\u003e"
+            ],
+            "photo_reference" : "CoQBdwAAANipkyw9p4QieNjAyIzglR0zOo8TRSCBrqV_fqObZvNjwRIe7jwZPUuplhC5hzyZM3Khcgl5zrNOMnrfkUhTQl2NtKBTakvltqtUxzejlfSrPUksh3w_uVZYTV6nA3I6PpOFoFu3oOCIH7Amp8qJFt1ECDMrwaJ7Kh-hFbaWqW9BEhAKCGBoIrfZMUiFOwhqsVIPGhRG2cbQ1LxVlpPDVxHmzJzPrwPbaA",
+            "width" : 4898
+         },
+         {
+            "height" : 1536,
+            "html_attributions" : [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103260255368454120519/photos\"\u003ePhilippe Gault\u003c/a\u003e"
+            ],
+            "photo_reference" : "CoQBdwAAAEEkxWxufu1lj5EOD2PaK1nmC9wwpRBA2ur2QoitIqTH6zTgKfVoSRuww_e9JB4QY7bP2OEhNdOqkgibEbVyAIdcXCq8B_y0zCNOSvBpHMfUI5GZI6gPv2csRaa0ilcbh0RK26JHDRKmqb-jNaHsT9zOBl6COmV8andHhafj9xrLEhD0AemCTpON7kKumah8XXcRGhQGmAKR_ED0RmLa7ENH0dSYMLKH6w",
+            "width" : 2048
+         },
+         {
+            "height" : 2988,
+            "html_attributions" : [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114279827387913956723/photos\"\u003eTomasz Lodziński\u003c/a\u003e"
+            ],
+            "photo_reference" : "CoQBdwAAAOuE5HZElSrqNcWhvFzMQFUUNELMtn3qqWJYjzjBxXHC6TZXprDp9hGT1Sxnec-SCrHmSgDBvANJ3wYl03l2c2vQvKDMy6DiAtbooe4lwYl-JtIcLJDhuXcnn2moVqBVbRUNW1okIR5CPwVC3IbUoM1jsJY6TzDHtdY5FqaqLKoLEhBJk6wtFp94qDxotclLBNdtGhSZytkS66-nKbxjxRUBgDKZh7gyaw",
+            "width" : 5312
+         },
+         {
+            "height" : 2988,
+            "html_attributions" : [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114279827387913956723/photos\"\u003eTomasz Lodziński\u003c/a\u003e"
+            ],
+            "photo_reference" : "CoQBdwAAAE9crh8qKMWJAgx37ZDQhRUO6kDiwBiEo6yp_RZsz1WSMc20zGPCU9CIArLAKmv0taO4MiT_iy-yrVPZxqYxj2_CLqcWII4MIjbzFan6kxQVKMDJ0cjfMtAc8_hZ8YdO1TEVCta3UEoN0okqUTcmeVw9miQnJu0KpV1qvytJ-YL4EhAfmBV1ZtvoTeI2hg2TIf5oGhRsOEG7pDVGDzECdamhyFKqBBP5qQ",
+            "width" : 5312
+         },
+         {
+            "height" : 2160,
+            "html_attributions" : [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112021077875689271282/photos\"\u003eUsługi dronem\u003c/a\u003e"
+            ],
+            "photo_reference" : "CoQBdwAAAK9tYpKroYnJsknmx2ffv5jCtdH2bDotxwwSHZOd__jjlFeHU5nJgkaxJLWhSuU5npOL_NhEaU7DznEpxHnr4RfX5BlqKxY2HI07BHxPyF5pCoUuDo4pjKyfS_LJEuBcqi7_E-jVma8HGYfeGqo1gZaSZTMtD5CUJ_1QVEkTmtmyEhDRUEVYEtamTlb7utJTfnDOGhSnKqJUAtLnYoFTLlVIthpaAuk9AA",
+            "width" : 3840
+         },
+         {
+            "height" : 3264,
+            "html_attributions" : [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112966972551536629013/photos\"\u003eJakub Hałun\u003c/a\u003e"
+            ],
+            "photo_reference" : "CoQBdwAAALzDBaW8ljH8uDWgdOoNiBVWlreit_w834LvSmyH9cC76vjbEyH6euD8utwYNY8DaJUd979GXlUe0mCqNmx8g5gHCrddJtKRzO-NVTWpuRIMLarBXy1i9hryH3CxrADwPlQneYevqETTCXqc3xOA6OkzD1BCn7D62faraQ7Rau8zEhClaVcA5mdwkht6jNP39KJGGhQtUR_Wjj66-8EaJ-CLvsL8C7T0Uw",
+            "width" : 4928
+         },
+         {
+            "height" : 3056,
+            "html_attributions" : [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108522975154186960885/photos\"\u003eRenata Stępień\u003c/a\u003e"
+            ],
+            "photo_reference" : "CoQBcwAAABPs5iGWZNyQh7MB0IK6kFvlwHvdS57dcfoVVNYrnmUL5y2hqBMr4zMMQA76huQrynTxWaTFPo2pQhjLSBDOjKDzHqEf-XFP0rw0Cl_FKj_eV7ZPstOg3fUlyDlWMHREEqL7pRwFJVMkAffzQIEiZHDcrDRWT4CQIOEeTRxR6IMDEhDyi2Rh4GtU9qFbItvgs--BGhTsACyGteaWSEfhdCjDGzalTb040Q",
+            "width" : 4592
+         },
+         {
+            "height" : 2988,
+            "html_attributions" : [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104192602049507986046/photos\"\u003eMartin Ickx\u003c/a\u003e"
+            ],
+            "photo_reference" : "CoQBdwAAAC-L26ZzcvO-N6RWr5HiNqwDf7KlpcdyCjLy74aGHA05y8I3cL9YhJKfUjTaMAlzJYImOn4cx2JuVMJUtk7Lx9-W_pNJSGAVNjGf8mNQbcklCBLzUltY-v4xOFXfIn6-0AVFnBQGV1kcnv-1XbM3JbCQ7IGHQAKEBt3kiSKxpRJlEhCCdJigrFfUSMYlL5Qrn3q6GhQl1HLZcRo8fSoYUK7jgnwGJqXjaA",
+            "width" : 5312
+         }
+      ],
+      "place_id" : "ChIJ0RhONcBEFkcRv4pHdrW2a7Q",
+      "reference" : "CnRsAAAAMt5zDAMZ6-NSfNNxnIS9d6fsX71D4K4JyJ4FNjCxHdp--aqPuQHtjCzzSB4UWpw-fMC_OWcTlfLkX0kn1ygaFApSYrFcAefgkxA6EPl8DdspgQG8pBdsPaDpGGYCYIBL5ZAMxawfE0MY92LrJfwC_hIQ0fDbjUnAAOPDIot8n-nIOxoU0-teaT-0QJukfUIE3a6mOxpEHPQ",
+      "scope" : "GOOGLE",
+      "types" : [ "locality", "political" ],
+      "url" : "https://maps.google.com/?q=Krak%C3%B3w,+Poland&ftid=0x471644c0354e18d1:0xb46bb6b576478abf",
+      "utc_offset" : 120,
+      "vicinity" : "Kraków"
+   },
+   "status" : "OK"
+}

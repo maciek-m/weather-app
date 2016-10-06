@@ -1,7 +1,6 @@
 import React, {
   PropTypes
 } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import AppComponent from './app';
 import {getForecast} from '../components/forecast/actions';
@@ -32,7 +31,7 @@ class App extends React.Component {
     };
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps, prevState) { // eslint-disable-line no-unused-vars
     if (this.props.data) {
       if ((!prevProps.data) || (this.props.data.placeId !== prevProps.data.placeId)) {
         localStorage.setItem(LAST_CITY_KEY, this.props.data.placeId);
@@ -43,7 +42,6 @@ class App extends React.Component {
   }
 
   cityChanged(latitude, longitude) {
-    console.log('city changed ', latitude, longitude);
     const {dispatch} = this.props;
     dispatch(getForecast(latitude, longitude));
   }
@@ -72,16 +70,8 @@ class App extends React.Component {
 
 function mapStateToProps(state) {
   // eslint-disable-line no-unused-vars
-  // const props = { currentCity: state.currentCity };
-  console.log('App mapStateToProps', state);
   const props = state[CITY_REDUCER];
   return props;
 }
-
-// function mapDispatchToProps(dispatch) {
-//   const actions = { };
-//   const actionMap = { actions: bindActionCreators(actions, dispatch) };
-//   return actionMap;
-// }
 
 export default connect(mapStateToProps)(App);

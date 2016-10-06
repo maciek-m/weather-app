@@ -1,5 +1,4 @@
 import React, {
-  Component,
   PropTypes
 } from 'react';
 import {connect} from 'react-redux';
@@ -43,13 +42,11 @@ class ChangeLocationContainer extends React.Component {
   }
 
   searchForCity(name) {
-    console.log('run search action', name);
     const {dispatch} = this.props;
     dispatch(citySearch(name));
   }
 
   cityClickHandler(placeId) {
-    console.log('city selected', placeId);
     const {onCityChange} = this.props;
     onCityChange(placeId);
   }
@@ -57,7 +54,6 @@ class ChangeLocationContainer extends React.Component {
   citySearchHandler(name) {
     const cityName = name;
     if ((cityName) && (cityName.length >= 3)) {
-      console.log('city name changed', name);
       this.setState({
         searchCityName: cityName
       });
