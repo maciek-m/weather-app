@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import {createReducer} from 'redux-act';
 import {defaultState} from '../common/reducer';
-import {citySearchRequest, citySearchOk, citySearchErr} from './actions';
+import {citySearchRequest, citySearchOk, citySearchErr, citySearchClear} from './actions';
 
 function transformData(data) {
   const transformed =
@@ -27,6 +27,12 @@ const reducer = createReducer({
     loading: false,
     data: null,
     error: payload
+  }),
+  [citySearchClear]: (state, payload) => ({
+    ...state,
+    loading: false,
+    data: null,
+    error: null
   })
 }, defaultState);
 

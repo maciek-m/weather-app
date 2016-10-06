@@ -9,12 +9,12 @@ import {CITY_REDUCER} from '../components/city/selector';
 import {getCity} from '../components/city/actions';
 
 const DEFAULT_CITY_ID = 'ChIJ0RhONcBEFkcRv4pHdrW2a7Q';
+const LAST_CITY_KEY = 'LastCityPlaceId';
 
 class App extends React.Component {
 
   static get propTypes() {
     return {
-      // lastCityPlaceId: PropTypes.string,
       dispatch: PropTypes.func.isRequired,
       data: PropTypes.object,
       error: PropTypes.object
@@ -22,8 +22,7 @@ class App extends React.Component {
   }
 
   static getLastCityId() {
-    return DEFAULT_CITY_ID;
-    // todo: read from WebStorage first!
+    return localStorage.getItem(LAST_CITY_KEY) || DEFAULT_CITY_ID;
   }
 
   constructor() {
@@ -36,7 +35,7 @@ class App extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (this.props.data) {
       if ((!prevProps.data) || (this.props.data.placeId !== prevProps.data.placeId)) {
-        // todo: save to webstorage
+        localStorage.setItem(LAST_CITY_KEY, this.props.data.placeId);
         this.cityChanged(this.props.data.geometry.location.lat,
           this.props.data.geometry.location.lng);
       }
@@ -49,15 +48,24 @@ class App extends React.Component {
     dispatch(getForecast(latitude, longitude));
   }
 
-  refresh() {
-    const {dispatch, data} = this.props;
-    dispatch(getCity(data.placeId));
+  loadCity(placeId) {
+    const {dispatch} = this.props;
+    dispatch(getCity(placeId));
+  }
+
+  changeLocationCitySelectedHandler(placeId) {
+    this.loadCity(placeId);
+  }
+
+  refreshHandler() {
+    this.loadCity(this.props.data.placeId);
   }
 
   render() {
     return (<AppComponent
       lastCityPlaceId={this.state.lastCityPlaceId}
-      onRefresh={() => this.refresh()}
+      onRefresh={() => this.refreshHandler()}
+      onChangeLocationCitySelected={(placeId) => this.changeLocationCitySelectedHandler(placeId)}
     />);
   }
 }

@@ -5,17 +5,22 @@ import {
   Button,
   Popover,
   PopoverContent,
-  PopoverTitle,
   Form,
   Input
 } from 'reactstrap';
-
+import classNames from 'classnames';
+import Alert from '../common/alert';
 
 export default class ChangeLocation extends React.Component {
 
   static get propTypes() {
     return {
-      onCitySearch: PropTypes.func.isRequired
+      onCitySearch: PropTypes.func.isRequired,
+      onCityClick: PropTypes.func.isRequired,
+      onPopupClose: PropTypes.func.isRequired,
+      searchIsLoading: PropTypes.bool,
+      searchResults: PropTypes.array,
+      error: PropTypes.object
     };
   }
 
@@ -30,17 +35,51 @@ export default class ChangeLocation extends React.Component {
     this.setState({
       isOpen: !this.state.isOpen
     });
+    if (!this.state.isOpen) {
+      this.props.onPopupClose();
+    }
+  }
+
+  renderCity(city) {
+    const {onCityClick} = this.props;
+    return (
+      <button
+        type="button"
+        className="list-group-item list-group-item-action"
+        key={city.place_id}
+        onClick={() => {
+          onCityClick(city.place_id);
+          this.togglePopover();
+        }}
+      >
+        {city.description}
+      </button>
+    );
   }
 
   renderCities() {
+    const {searchIsLoading, searchResults} = this.props;
+    const isHidden = (!this.state.isOpen) || (searchIsLoading) || !(searchResults);
+    const classes = classNames('list-group', {
+      'hidden-xs-up': isHidden
+    });
+    const cities = (searchResults) ? searchResults.map((city) => this.renderCity(city)) : null;
     return (
-      <div className="list-group">
-        <button
-          type="button"
-          className="list-group-item list-group-item-action">
-          These Boots Are Made For Walking
-        </button>
-      </div>
+      (searchIsLoading) ?
+        (<div className="content">loading...</div>) :
+        (<div className={classes}>
+          {cities}
+        </div>)
+    );
+  }
+
+  renderSearchPanel() {
+    return (
+      (!this.props.error) ? (
+        <div className="content">
+          {this.renderCities()}
+        </div>
+      ) : (<Alert message={this.props.error.message} />)
     );
   }
 
@@ -68,7 +107,7 @@ export default class ChangeLocation extends React.Component {
                 onChange={(e) => onCitySearch(e.target.value)}
               />
             </Form>
-            {this.renderCities()}
+            {this.renderSearchPanel()}
           </PopoverContent>
         </Popover>
       </div>

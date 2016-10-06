@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import {mapStateToProps} from './selector';
 import {getCity} from './actions';
 import CityPanel from './citypanel';
+import Alert from '../common/alert';
 
 class CityPanelContainer extends Component {
 
@@ -37,7 +38,7 @@ class CityPanelContainer extends Component {
         country={data.country}
         date={data.date}
       />
-      : <div className="container">Error: {error.message}</div>
+      : <Alert message={error.message}/>
     );
   }
 

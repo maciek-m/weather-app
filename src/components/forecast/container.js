@@ -6,6 +6,7 @@ import {Container, Row, Col} from 'reactstrap';
 import {mapStateToProps} from './selector';
 import CurrentWeather from './current';
 import Forecast from './forecast';
+import Alert from '../common/alert';
 
 class ForecastContainer extends React.Component {
 
@@ -34,7 +35,7 @@ class ForecastContainer extends React.Component {
   }
 
   renderError(error) {
-    return (<div className="container">{error.message}</div>);
+    return (<Alert message={error.message}/>);
   }
 
   renderForecast(data, error) {
@@ -47,7 +48,6 @@ class ForecastContainer extends React.Component {
       <h4>Loading data...</h4>
       : this.renderForecast(data, error)
     );
-
   }
 
 }

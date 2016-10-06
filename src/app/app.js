@@ -14,12 +14,13 @@ class AppComponent extends React.Component {
   static get propTypes() {
     return {
       lastCityPlaceId: React.PropTypes.string,
-      onRefresh: React.PropTypes.func.isRequired
+      onRefresh: React.PropTypes.func.isRequired,
+      onChangeLocationCitySelected: React.PropTypes.func.isRequired
     };
   }
 
   render() {
-    const { lastCityPlaceId, onRefresh } = this.props;
+    const { lastCityPlaceId, onRefresh, onChangeLocationCitySelected } = this.props;
     return (
       <Container>
         <Row>
@@ -27,7 +28,7 @@ class AppComponent extends React.Component {
             <CityPanel lastCityPlaceId={lastCityPlaceId} />
           </Col>
           <Col sm="4">
-            <ChangeLocation/>
+            <ChangeLocation onCityChange={onChangeLocationCitySelected}/>
           </Col>
           <Col sm="2">
             <Button color="primary" onClick={onRefresh}>Refresh</Button>

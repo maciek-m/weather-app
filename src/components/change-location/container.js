@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 import {mapStateToProps} from './selector';
 import ChangeLocationPanel from './change-location';
-import {citySearch} from './actions';
+import {citySearch, cityClear} from './actions';
 
 class ChangeLocationContainer extends React.Component {
 
@@ -14,7 +14,9 @@ class ChangeLocationContainer extends React.Component {
     return {
       dispatch: PropTypes.func.isRequired,
       data: PropTypes.object,
-      error: PropTypes.object
+      error: PropTypes.object,
+      isLoading: PropTypes.bool,
+      onCityChange: PropTypes.func.isRequired
     };
   }
 
@@ -27,10 +29,29 @@ class ChangeLocationContainer extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.searchCityName !== this.state.searchCityName) {
-      console.log('run search action', this.state.searchCityName);
-      const {dispatch} = this.props;
-      dispatch(citySearch(this.state.searchCityName));
+      if (this.state.searchCityName) {
+        this.searchForCity(this.state.searchCityName);
+      } else {
+        this.clearCitySearchResults();
+      }
     }
+  }
+
+  clearCitySearchResults() {
+    const {dispatch} = this.props;
+    dispatch(cityClear());
+  }
+
+  searchForCity(name) {
+    console.log('run search action', name);
+    const {dispatch} = this.props;
+    dispatch(citySearch(name));
+  }
+
+  cityClickHandler(placeId) {
+    console.log('city selected', placeId);
+    const {onCityChange} = this.props;
+    onCityChange(placeId);
   }
 
   citySearchHandler(name) {
@@ -40,13 +61,22 @@ class ChangeLocationContainer extends React.Component {
       this.setState({
         searchCityName: cityName
       });
+    } else {
+      this.setState({
+        searchCityName: ''
+      });
     }
   }
 
   render() {
+    const {isLoading, data, error} = this.props;
     return (<ChangeLocationPanel
       onCitySearch={_.debounce((name) => this.citySearchHandler(name), 1500)}
-      searchIsLoading
+      searchIsLoading={isLoading}
+      searchResults={(data) ? data.predictions : null}
+      onCityClick={(placeId) => this.cityClickHandler(placeId)}
+      onPopupClose={() => this.clearCitySearchResults()}
+      error={error}
     />);
   }
 

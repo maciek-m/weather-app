@@ -4,6 +4,11 @@ import Service from './service';
 export const citySearchRequest = createAction('CITY_SEARCH_REQUEST');
 export const citySearchOk = createAction('CITY_SEARCH_OK');
 export const citySearchErr = createAction('CITY_SEARCH_ERR');
+export const citySearchClear = createAction('CITY_SEARCH_CLEAR');
+
+export function cityClear() {
+  return (dispatch) => dispatch(citySearchClear); // why this not work?
+}
 
 export function citySearch(name) {
   return (dispatch) => {

@@ -12,8 +12,8 @@ export default class CitySearchService {
   }
 
   citySearch(name) {
-    // const url = `${URL_API}${URL_CITY_SEARCH}?byName=${name}`;
-    const url = 'json-mocks/city-search.json';
+    const url = `${URL_API}${URL_CITY_SEARCH}?byName=${name}`;
+    // const url = 'json-mocks/city-search.json';
     return fetch(url);
   }
 

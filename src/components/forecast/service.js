@@ -13,9 +13,9 @@ export default class ForecastService {
   }
 
   forecast(lat, lng) {
-    // const url =
-      // `${URL_API}${URL_FORECAST}?latitude=${lat}&longitude=${lng}&source=${DEFAULT_SOURCE}`;
-    const url = 'json-mocks/forecast.json';
+    const url =
+      `${URL_API}${URL_FORECAST}?latitude=${lat}&longitude=${lng}&source=${DEFAULT_SOURCE}`;
+    // const url = 'json-mocks/forecast.json';
     return fetch(url);
   }
 
