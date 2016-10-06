@@ -1,7 +1,6 @@
+const CITY_SEARCH_REDUCER = 'citySearchReducer';
+
 export function mapStateToProps(state) {
-  // console.log('mapStateToProps 1', state);
-  // const props = state[CITY_REDUCER];
-  // console.log('mapStateToProps 2', props);
-  const props = {};
+  const props = state[CITY_SEARCH_REDUCER];
   return props;
 }

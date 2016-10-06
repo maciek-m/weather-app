@@ -1,0 +1,116 @@
+{
+  "predictions" : [
+    {
+      "description" : "Kraków, Poland",
+      "id" : "22ee34a1db0c617129e62cb84d1eb7162afceb98",
+      "matched_substrings" : [
+        {
+          "length" : 3,
+          "offset" : 0
+        }
+      ],
+      "place_id" : "ChIJ0RhONcBEFkcRv4pHdrW2a7Q",
+      "reference" : "CjQnAAAAx-pRaydORVAhH9Dnz5arHiIjKON_EVWGPufdoVcQ2-0BBzreLXMAxLXVmioJWk_fEhAK1PG9V6y_Cbdmj5V8OhNJGhQ-UVWTG_sF6H08PN_XF1k05-UjDA",
+      "terms" : [
+        {
+          "offset" : 0,
+          "value" : "Kraków"
+        },
+        {
+          "offset" : 8,
+          "value" : "Poland"
+        }
+      ],
+      "types" : [ "locality", "political", "geocode" ]
+    },
+    {
+      "description" : "Krąków, Poland",
+      "id" : "c7001988f4bed65d5ddef74b64cccf9d08fed8d1",
+      "matched_substrings" : [
+        {
+          "length" : 3,
+          "offset" : 0
+        }
+      ],
+      "place_id" : "ChIJzY1OY5fvGkcRem2j3_xWLLY",
+      "reference" : "CjQoAAAACg42C4CKeKuVwnmpmTb5RWj_Jkv_JpaK81y_zqb1aFlvn9jmDitaqMVO84huEhAcEhArfI85V15_mj0EnRLaqvyOGhTuZ-yg1zC0_HSJzGiCqP_rixyZYA",
+      "terms" : [
+        {
+          "offset" : 0,
+          "value" : "Krąków"
+        },
+        {
+          "offset" : 8,
+          "value" : "Poland"
+        }
+      ],
+      "types" : [ "locality", "political", "geocode" ]
+    },
+    {
+      "description" : "Kranj, Slovenia",
+      "id" : "43bbcdb0a27ddac0b959847c21bda6cbaf6de74b",
+      "matched_substrings" : [
+        {
+          "length" : 3,
+          "offset" : 0
+        }
+      ],
+      "place_id" : "ChIJa77CvR24ekcR9D2w3Ue4w90",
+      "reference" : "CjQnAAAAV79lD9UoE0PmTuNW5kXkBF9XJirF1-L4cnwK_1PgQLXKbpqubnsge45jg-GU7L6BEhBUCEcY97AMmJgXG3I9VJ64GhQQ-ilKJ0sEh-86el_bAMJiGVJenA",
+      "terms" : [
+        {
+          "offset" : 0,
+          "value" : "Kranj"
+        },
+        {
+          "offset" : 7,
+          "value" : "Slovenia"
+        }
+      ],
+      "types" : [ "locality", "political", "geocode" ]
+    },
+    {
+      "description" : "Kragujevac",
+      "id" : "9783b46874e8ad520de145436f14c05b4fe45c6b",
+      "matched_substrings" : [
+        {
+          "length" : 3,
+          "offset" : 0
+        }
+      ],
+      "place_id" : "ChIJ2Q_g3tsgV0cRaLkkRXh3-g0",
+      "reference" : "CjQiAAAAcdMhcI-tKVwo0XUIJLs5SAilfMf5_iOSF41gkL45ulTrUvM8Dbg858Qh253ffoqcEhBFx2HgQdOL1ZLlX0ALzVr7GhR2sL0Oaz8HaF7u2yRLHQHV2YmdHA",
+      "terms" : [
+        {
+          "offset" : 0,
+          "value" : "Kragujevac"
+        }
+      ],
+      "types" : [ "locality", "political", "geocode" ]
+    },
+    {
+      "description" : "Krasnik, Poland",
+      "id" : "d31ed318f45884dda038dd005a3803df1b94021d",
+      "matched_substrings" : [
+        {
+          "length" : 3,
+          "offset" : 0
+        }
+      ],
+      "place_id" : "ChIJpQQXmUPoIkcRcTq26RQ5fbI",
+      "reference" : "CjQnAAAAEzxCDnbL6GCGVU8Ogu5pbWzbqpKdjtoQnLhoiFxR5qP7Whmsv010fWn-ZUcU3uCNEhDKRIEFtuWgVWqWWlsMk4iqGhRz1cre0xWNeLmLiHgczA0ncbGdyQ",
+      "terms" : [
+        {
+          "offset" : 0,
+          "value" : "Krasnik"
+        },
+        {
+          "offset" : 9,
+          "value" : "Poland"
+        }
+      ],
+      "types" : [ "locality", "political", "geocode" ]
+    }
+  ],
+  "status" : "OK"
+}

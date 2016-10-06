@@ -10,7 +10,14 @@ import {
   Input
 } from 'reactstrap';
 
+
 export default class ChangeLocation extends React.Component {
+
+  static get propTypes() {
+    return {
+      onCitySearch: PropTypes.func.isRequired
+    };
+  }
 
   constructor() {
     super();
@@ -39,6 +46,7 @@ export default class ChangeLocation extends React.Component {
 
   render() {
     const {isOpen} = this.state;
+    const {onCitySearch} = this.props;
     return (
       <div>
         <Button
@@ -54,7 +62,11 @@ export default class ChangeLocation extends React.Component {
           toggle={() => this.togglePopover()}>
           <PopoverContent>
             <Form>
-              <Input type="text" placeholder="Enter City"/>
+              <Input
+                type="text"
+                placeholder="Enter City"
+                onChange={(e) => onCitySearch(e.target.value)}
+              />
             </Form>
             {this.renderCities()}
           </PopoverContent>
