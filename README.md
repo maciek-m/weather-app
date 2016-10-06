@@ -34,5 +34,6 @@ $ npm run test:watch
 ##Description
 Due to time limitations some functionality is has not been completed:
 - weather data is pulled only from one provider (WORLD_WEATHER)
+- missing "loading" indicator when searching for cities
 - only one action creator is covered by unit tests
 - the design, as also look & feel of the widget are relatively poor
