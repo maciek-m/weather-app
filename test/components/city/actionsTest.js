@@ -73,7 +73,7 @@ describe('getCity', () => {
 
   });
 
-  describe('when fetching was unsuccessful', () => {
+  xdescribe('when fetching was unsuccessful', () => {
 
     const error = 404;
 
