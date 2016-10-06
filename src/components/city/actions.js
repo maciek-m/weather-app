@@ -7,7 +7,7 @@ export const cityErr = createAction('CITY_ERR');
 
 export function getCity(placeId) {
   return (dispatch) => {
-    dispatch(cityRequest);
+    dispatch(cityRequest());
     return Service.getInstance().cities(placeId)
       .then((response) => {
         if (response.ok) {

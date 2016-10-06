@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import CityPanel from '../../src/components/city/citypanel.js';
+import CityPanel from '../../../src/components/city/citypanel.js';
 
 describe('<CityPanel />', () => {
 

@@ -7,7 +7,7 @@ export const citySearchErr = createAction('CITY_SEARCH_ERR');
 export const citySearchClear = createAction('CITY_SEARCH_CLEAR');
 
 export function cityClear() {
-  return (dispatch) => dispatch(citySearchClear); // why this not work?
+  return (dispatch) => dispatch(citySearchClear());
 }
 
 export function citySearch(name) {

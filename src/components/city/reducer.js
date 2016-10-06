@@ -4,18 +4,10 @@
 import _ from 'lodash';
 import {createReducer} from 'redux-act';
 import {defaultState} from '../common/reducer';
-// import { cityAction } from './actions';
 import {cityRequest, cityOk, cityErr} from './actions';
-
-// const defaultState = Immutable.Map({ // eslint-disable-line new-cap
-//   isLoading: false,
-//   city: {}
-// });
 
 function transformCityData(response) {
   const value = _.pick(response, ['result', 'status']);
-  // console.log('city response: ', response);
-  // console.log('');
   return Object.assign({}, {
     status: value.status,
     name: value.result.name,
@@ -26,21 +18,6 @@ function transformCityData(response) {
     geometry: value.result.geometry
   });
 }
-
-// const reducer = createReducer({
-//   [cityRequest]: (state) => state.set('isLoading', true),
-//   [cityResponded]: (state, response) => state.set('isLoading', false)
-//     .set('city', transform(response))
-// }, defaultState);
-
-// const reducer = createReducer({
-//   [cityRequest]: (state) => ({...state, isLoading: true}),
-//   [cityResponded]: (state, response) => ({
-//     ...state,
-//     isLoading: false,
-//     response: transform(response)
-//   })
-// }, defaultState);
 
 const reducer = createReducer({
   [cityRequest]: (state, payload) => ({
